@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaBars } from "react-icons/fa";
+import CLOSE from "./close.svg";
+import OPEN from "./open.svg";
 import { links, social } from "./data";
 import logo from "./logo.svg";
 
@@ -26,7 +27,11 @@ const Navbar = () => {
             className="nav-toggle"
             onClick={() => setShowLinks(!showLinks)}
           >
-            <FaBars />
+            {showLinks ? (
+              <img src={CLOSE} alt="open icon" />
+            ) : (
+              <img src={OPEN} alt="close icon" />
+            )}
           </button>
         </div>
         <div className="links-container" ref={linksContainerRef}>
